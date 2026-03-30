@@ -1,0 +1,8 @@
+peregrine:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'data/peregrine.duckdb'
+      threads: 4
+      schema: main

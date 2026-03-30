@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: public_safety_raw
+    schema: main
+    description: "Raw tables written by ingest_sf_data.py into DuckDB"
+    tables:
+      - name: incidents
+        description: "SF Police incidents (real) + synthetic FIRE/EMS + injected anomalies"
+        columns:
+          - name: incident_id
+            description: "Unique identifier"
+          - name: agency
+            description: "POLICE, FIRE, or EMS"
+          - name: reported_at
+            description: "Incident timestamp"
+
+      - name: dispatch_logs
+        description: "Synthetic dispatch / response time logs per incident"
+        columns:
+          - name: log_id
+            description: "Unique log identifier"
+          - name: response_time_seconds
+            description: "Seconds from dispatch to on-scene arrival"
+
+      - name: sensor_feeds
+        description: "Synthetic camera / gunshot / traffic / weather sensor feeds"
+        columns:
+          - name: feed_id
+            description: "Unique feed identifier"

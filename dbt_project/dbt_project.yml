@@ -1,0 +1,22 @@
+name: 'peregrine'
+version: '1.0.0'
+config-version: 2
+
+profile: 'peregrine'
+
+model-paths: ["models"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  peregrine:
+    raw:
+      +materialized: view
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

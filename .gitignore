@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/peregrine.duckdb
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+.DS_Store
